@@ -10,11 +10,30 @@ namespace App\Http\Controllers;
 
 use App\ContactUS;
 use Illuminate\Http\Request;
-use Mail;
 
 
 class ContactMailController extends Controller
 {
+
+    /**
+     * Show a list of all available flights.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        $contacts = ContactUS::all();
+
+        foreach ($contacts as $contact) {
+            echo $contact->name;
+            echo $contact->email;
+            echo $contact->subject;
+            echo $contact->user_message;
+            //die(" test");
+        }
+
+        return view('partials.mail_send_info', compact('name', 'email', 'user_message', 'subject'));
+    }
 
     /**
      * Show the application dashboard.
@@ -56,13 +75,5 @@ class ContactMailController extends Controller
         ContactUS::create($request->all());
 
         return back()->with('success', 'Thanks for contacting us!');
-    }
-
-    public function mailRecieved(Request  $request){
-        $name = $request->get('name');
-        $email = $request->get('email');
-        $subject = $request->get('subject');
-        $user_message = $request->get('message');
-        return view('partials.mail_send_info', compact('name', 'email', 'user_message','subject'));
     }
 }

@@ -41,4 +41,4 @@ Route::get('/whotocontact',function(){
 Route::get('/whotocontact', 'ContactMailController@contactUS');
 Route::post('/whotocontact', ['as'=>'contactus.store','uses'=>'ContactMailController@contactUSPost']);
 
-Route::get('/emailsend', 'ContactMailController@mailRecieved');
+Route::get('/emailsend', 'ContactMailController@index');
