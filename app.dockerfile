@@ -13,9 +13,21 @@ RUN curl -o /tmp/composer-setup.php https://getcomposer.org/installer \
     && php /tmp/composer-setup.php --no-ansi --install-dir=/usr/local/bin --filename=composer --snapshot \
     && rm -f /tmp/composer-setup.*
 
+# Copy PHP configurations
+COPY etc/php.ini /etc/php.ini
+COPY etc/xdebug.ini /etc/php.d/xdebug.ini
+
 # xdebug
 RUN echo "xdebug.remote_connect_back=1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-    && echo "xdebug.remote_port=9001" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.remote_port=9000" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.remote_enable=1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
+ADD ["db_init.sql", "/init.sql"]
+
+RUN /etc/init.d/mysql start && \
+         mysql -u root -p$MYSQL_ROOT_PASSWORD  -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password';FLUSH PRIVILEGES;" && \
+        mysql -u root -p${MYSQL_ROOT_PASSWORD}  < /init.sql
+
+#PORT
 
 RUN echo "date.timezone = \"Europe/Amsterdam\"" >> /usr/local/etc/php/php.ini

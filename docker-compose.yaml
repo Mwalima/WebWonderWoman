@@ -25,24 +25,7 @@ services:
       - 8080:80
     links:
       - mysql
-
-
-  # The Database
-#  database:
-#    image: mysql:5.7
-#    volumes:
-#      - dbdata:/var/lib/mysql
-#    environment:
-#      - "MYSQL_DATABASE=OOP"
-#      - "MYSQL_USER=root"
-#      - "MYSQL_PASSWORD=qwerty"
-#      - "MYSQL_ROOT_PASSWORD=qwerty"
-#    ports:
-#        - "33061:3306"
-#
-#volumes:
-#  dbdata:
-
+#the database
   mysql:
       build: builds/mysql
       container_name: mysql
@@ -52,3 +35,4 @@ services:
         - MYSQL_ROOT_PASSWORD=qwerty
       volumes:
         - /Documents/workspace/WebWonderWoman/_mysql:/var/lib/mysql
+#the debugger
