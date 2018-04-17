@@ -16,16 +16,15 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/users','UserController@getUserCredentials');
-Route::post('/users',['as'=>'Users.store', 'uses'=>'UserController@insertUser']);
+Route::get('/login','UserController@index');
+Route::post('/login',['as'=>'users.store','uses'=>'UserController@insertUser']);;
 
 Route::get('/invite',function(){
     return view('invitation');
 });
 
-Route::get('/mydashboard',function(){
-    return view('mydashboard');
-});
+Route::get('/whoareyou','ContactMailController@index');
+Route::get('/whoareyou','UserController@getUserCredentials');
 
 Route::get('/whoweare',function(){
     return view('whoweare');
@@ -41,4 +40,7 @@ Route::get('/whotocontact',function(){
 Route::get('/whotocontact', 'ContactMailController@contactUS');
 Route::post('/whotocontact', ['as'=>'contactus.store','uses'=>'ContactMailController@contactUSPost']);
 
-Route::get('/emailsend', 'ContactMailController@index');
+//todo create a global extend form to get all the info from different controllers instaed of 1
+Route::get('/mail_send_info', function(){
+    return view('partials.mail_send_info');
+});

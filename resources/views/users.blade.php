@@ -8,46 +8,13 @@
     @include('partials.nav_menu')
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="register-info-wraper">
-                <div id="register-info">
-                    <div class="cont2">
-                        <div class="thumbnail">
-                            <img src="{{asset('images/face2.png')}}" alt="Mwalima Peltenburg" class="img-circle">
-                        </div><!-- /thumbnail -->
-                        <h2>Mwalima Peltenburg</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="cont3">
-                                <p><ok>Username:</ok>{{$name}}</p>
-                                <p><ok>Mail:</ok>{{$email}}</p>
-                                <p><ok>Location:</ok>{{$city}}</p>
-                                <p><ok>Address:</ok>{{$street}}</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="cont3">
-                                {{--<p><ok>Registered:</ok>{{$created_at}}</p>--}}
-                                {{--<p><ok>Last Login:</ok>{{$lastlogin}}</p>--}}
-                                {{--<p><ok>Phone:</ok>{{$phonenumber}}</p>--}}
-                                {{--<p><ok>Mobile</ok>{{$mobilephonenumber}}</p>--}}
-                            </div>
-                        </div>
-                    </div><!-- /inner row -->
-                </div>
-            </div>
-
-        </div>
-
         <div class="col-sm-6 col-lg-6">
             <div id="register-wraper">
                 <form id="register-form" class="form">
                     <legend>User Register</legend>
 
                     <div class="body">
-                        {!! Form::open(['route'=>'Users.store']) !!}
+                        {!! Form::open(['route'=>'users.store']) !!}
 
                         <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                             {!! Form::label('Name:') !!}
@@ -78,10 +45,21 @@
                             <span class="text-danger">{{ $errors->first('housenumber') }}</span>
                         </div>
 
+                        <div class="form-group {{ $errors->has('zipcode') ? 'has-error' : '' }}">
+                            {!! Form::label('Zipcode:') !!}
+                            {!! Form::text('zipcode', old('zipcode'), ['class'=>'form-control', 'placeholder'=>'Enter zipcode']) !!}
+                            <span class="text-danger">{{ $errors->first('street') }}</span>
+                        </div>
+
                         <div class="form-group {{ $errors->has('city') ? 'has-error' : '' }}">
                             {!! Form::label('City:') !!}
                             {!! Form::text('city', old('city'), ['class'=>'form-control', 'placeholder'=>'Enter cityname']) !!}
                             <span class="text-danger">{{ $errors->first('city') }}</span>
+                        </div>
+                        <div class="form-group {{ $errors->has('country') ? 'has-error' : '' }}">
+                            {!! Form::label('Country:') !!}
+                            {!! Form::text('country', old('country'), ['class'=>'form-control', 'placeholder'=>'Enter Country if differnt then NL']) !!}
+                            <span class="text-danger">{{ $errors->first('country') }}</span>
                         </div>
                         <label class="checkbox inline">
                             <input type="checkbox" id="inlineCheckbox1" value="option1"> I agree with the terms &amp; conditions

@@ -4,25 +4,21 @@
     @include('partials.header')
 </head>
 <body>
-
 <!-- NAVIGATION MENU -->
 
 <div class="navbar-nav navbar-inverse navbar-fixed-top">
     @include('partials.nav_menu')
 </div>
-
 <div class="container">
-
     <!-- FIRST ROW OF BLOCKS -->
     <div class="row">
-
         <!-- USER PROFILE BLOCK -->
         <div class="col-sm-3 col-lg-3">
             <div class="dash-unit">
                 <dtitle>User Profile</dtitle>
                 <hr>
                 <div class="thumbnail">
-                    <img src="{{ asset('images/face.jpg')}}" alt="Marcel Newman" class="img-circle">
+                    <img src="{{ asset('images/face2.png')}}" alt="Mwalima Peltenburg" class="img-circle">
                 </div><!-- /thumbnail -->
                 <h1>Marcel Newman</h1>
                 <h3>Madrid, Spain</h3>
@@ -34,8 +30,6 @@
                     <span aria-hidden="true" class="li_key fs1"></span>
                 </div>
             </div>
-        </div>
-
         <!-- DONUT CHART BLOCK -->
         <div class="col-sm-3 col-lg-3">
             <div class="dash-unit">
@@ -75,7 +69,6 @@
                     <p><img src="{{ asset('images/up.png')}}" alt=""> <bold>Up</bold> | 356ms.</p>
                 </div>
             </div>
-
         </div>
     </div><!-- /row -->
 
@@ -85,11 +78,14 @@
         <div class="col-sm-3 col-lg-3">
             <!-- MAIL BLOCK -->
             <div class="dash-unit">
-                <dtitle>Inbox (1)</dtitle>
+                <dtitle>You received a message from {{$count}}</dtitle>
                 <hr>
                 <div class="framemail">
                     <div class="window">
                         <ul class="mail">
+                            <li>
+                                {{--@include('partials.mail_send_info')--}}
+                            </li>
                             <li>
                                 <i class="unread"></i>
                                 <img class="avatar" src="{{ asset('images/photo01.jpeg')}}" alt="avatar">

@@ -36,3 +36,7 @@ services:
       volumes:
         - /Documents/workspace/WebWonderWoman/_mysql:/var/lib/mysql
 #the debugger
+  cache:
+      image: redis:3.0
+      ports:
+        - "63791:6379"

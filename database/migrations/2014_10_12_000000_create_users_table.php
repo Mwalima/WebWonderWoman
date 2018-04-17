@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->integer('housenumber');
             $table->string('zipcode');
             $table->string('city');
+            $table->string('country');
+            $table->string('picture');
             $table->rememberToken();
             $table->timestamps();
         });

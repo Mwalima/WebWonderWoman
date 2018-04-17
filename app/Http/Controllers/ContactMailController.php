@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\ContactUS;
 use Illuminate\Http\Request;
+use Mail;
 
 
 class ContactMailController extends Controller
@@ -25,14 +26,13 @@ class ContactMailController extends Controller
         $contacts = ContactUS::all();
 
         foreach ($contacts as $contact) {
-            echo $contact->name;
-            echo $contact->email;
-            echo $contact->subject;
-            echo $contact->user_message;
-            //die(" test");
+            $name = $contact->name;
+            $email = $contact->email;
+            $subject = $contact->subject;
+            $user_message = $contact->user_message;
         }
-
-        return view('partials.mail_send_info', compact('name', 'email', 'user_message', 'subject'));
+        $count = $contacts->count();
+        return view('whoareyou', compact('name', 'email', 'user_message', 'subject','count'));
     }
 
     /**
