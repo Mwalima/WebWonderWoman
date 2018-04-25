@@ -15,7 +15,6 @@ use Mail;
 
 class ContactMailController extends Controller
 {
-
     /**
      * Show a list of all available flights.
      *
@@ -29,10 +28,12 @@ class ContactMailController extends Controller
             $name = $contact->name;
             $email = $contact->email;
             $subject = $contact->subject;
-            $user_message = $contact->user_message;
+            $message = $contact->message;
+
+            $count = $contacts->count();
         }
-        $count = $contacts->count();
-        return view('whoareyou', compact('name', 'email', 'user_message', 'subject','count'));
+            //return view('partials.mail_send_info', compact('name', 'email', 'message', 'subject', 'count'));
+
     }
 
     /**
@@ -65,7 +66,7 @@ class ContactMailController extends Controller
                 'subject'=>$request->get('subject'),
                 'name' => $request->get('name'),
                 'email' => $request->get('email'),
-                'user_message' => $request->get('message')
+                'message' => $request->get('message')
             ), function($message)
             {
                 $message->from('adfsdfgsdfg@adsfsdfg.nl');

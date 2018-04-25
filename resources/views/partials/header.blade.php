@@ -12,7 +12,7 @@
 
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script type="text/javascript" src="{{ asset('js/lineandbars.js')}}"></script>
 
     <script type="text/javascript" src="{{ asset('js/dash-charts.js')}}"></script>

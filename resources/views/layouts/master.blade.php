@@ -18,10 +18,10 @@
                 <dtitle>User Profile</dtitle>
                 <hr>
                 <div class="thumbnail">
-                    <img src="{{ asset('images/face2.png')}}" alt="Mwalima Peltenburg" class="img-circle">
+                    <img src="{{ asset('images/face2_80X80.png')}}" alt="Mwalima Peltenburg" class="img-circle">
                 </div><!-- /thumbnail -->
-                <h1>Marcel Newman</h1>
-                <h3>Madrid, Spain</h3>
+                <h1>{{$name}}</h1>
+                <h3>{{$city}},{{$city}}</h3>
                 <br>
                 <div class="info-user">
                     <span aria-hidden="true" class="li_user fs1"></span>

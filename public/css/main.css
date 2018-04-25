@@ -127,6 +127,25 @@ h5 {
     margin-left: 50px;
 }
 
+.textweb_underline{
+	color: #fcf8e3;
+	margin-left: 50px;
+	font-size: 30%;
+}
+
+.textwonder_underline{
+	color: #fcf8e3;
+	margin-left: 50px;
+	font-size: 60%;
+
+}
+
+.textwoman_underline{
+	color: #fcf8e3;
+	margin-left: 50px;
+	font-size: 80%;
+}
+
 .dash-unit h3 {
 	font-weight:300;
 	font-size: 15px;

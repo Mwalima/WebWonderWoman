@@ -8,6 +8,16 @@
     @include('partials.nav_menu')
 </div>
 <div class="container">
+    @if(Session::has('success'))
+        <div class="alert alert-success">
+            {{ Session::get('success') }}
+        </div>
+    @endif
+        @if(Session::has('failure'))
+            <div class="alert alert-failure">
+                {{ Session::get('failure') }}
+            </div>
+        @endif
         <div class="col-sm-6 col-lg-6">
             <div id="register-wraper">
                 <form id="register-form" class="form">
@@ -33,6 +43,11 @@
                             <span class="text-danger">{{ $errors->first('email') }}</span>
                         </div>
 
+                        <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
+                            {!! Form::label('Password:') !!}
+                            {!! Form::password('password', old('password'), ['class'=>'form-control', 'placeholder'=>'create password']) !!}
+                            <span class="text-danger">{{ $errors->first('password') }}</span>
+                        </div>
                         <div class="form-group {{ $errors->has('street') ? 'has-error' : '' }}">
                             {!! Form::label('Street:') !!}
                             {!! Form::text('street', old('street'), ['class'=>'form-control', 'placeholder'=>'Enter streetname']) !!}
