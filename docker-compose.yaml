@@ -11,7 +11,7 @@ services:
       - ./:/var/www/html
     environment:
       - "DB_PORT=3307"
-      - "DB_HOST=192.168.2.144"
+      - "DB_HOST=mysql"
 
   # The Web Server
   web:

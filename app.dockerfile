@@ -19,7 +19,7 @@ RUN curl -o /tmp/composer-setup.php https://getcomposer.org/installer \
 
 # xdebug
 RUN echo "xdebug.remote_connect_back=1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-    && echo "xdebug.remote_port=9001" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
+    && echo "xdebug.remote_port=9000" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.remote_enable=1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 RUN echo "date.timezone = \"Europe/Amsterdam\"" >> /usr/local/etc/php/php.ini

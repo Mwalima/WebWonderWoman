@@ -29,7 +29,7 @@
 </div>
 </body>
 
-@debug{{$teksten[1]}}
+{{--@debug{{$teksten[1]}}--}}
 <script type="text/javascript">
 
         const indextekst = document.getElementsByClassName("index_underline");
