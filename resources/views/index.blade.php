@@ -38,17 +38,17 @@
         const woman_text = document.getElementsByClassName("textwoman_underline");
 
         indextekst[0].addEventListener("click",function(){
-            var webtext = "<?php echo $teksten[0]['message']; ?>";
+            var webtext = "dhfhtdht";
             web_text[0].innerHTML = webtext;
         });
 
         indextekst[1].addEventListener("click",function(){
-            var webtext = "<?php echo $teksten[0]['message']; ?>";
+            var webtext = "sdfgsdfgsdfg";
             wonder_text[0].innerHTML = webtext;
         });
 
         indextekst[2].addEventListener("click",function(){
-            var webtext = "<?php echo $teksten[0]['message']; ?>";
+            var webtext = "sdfgsdfgsdfg";
             woman_text[0].innerHTML= webtext;
         });
 </script>
