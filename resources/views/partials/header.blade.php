@@ -5,6 +5,7 @@
     <meta name="author" content="Mwalima Peltenburg">
 
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/card.css')}}"/>
 
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-style.css') }}" rel="stylesheet">

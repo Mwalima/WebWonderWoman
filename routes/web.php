@@ -37,3 +37,10 @@ Route::get('/whotocontact',function(){
 Route::get('/whotocontact', 'ContactMailController@contactUS');
 Route::post('/whotocontact', ['as'=>'contactus.store','uses'=>'ContactMailController@contactUSPost']);
 
+Route::get('/privacypolicy', function(){
+    return view('privacypolicy');
+});
+
+Route::get('/findthelooapp', function(){
+    return view('partials.findtheloo');
+});
