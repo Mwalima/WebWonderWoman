@@ -38,17 +38,17 @@
         const woman_text = document.getElementsByClassName("textwoman_underline");
 
         indextekst[0].addEventListener("click",function(){
-            var webtext = "dhfhtdht";
+            var webtext = "Ik maak applicaties en toepassingen voor vanalles en iedereen";
             web_text[0].innerHTML = webtext;
         });
 
         indextekst[1].addEventListener("click",function(){
-            var webtext = "sdfgsdfgsdfg";
+            var webtext = "Zo als: infra voor de azure cloud toepassing, een .net website en een mailchimp api";
             wonder_text[0].innerHTML = webtext;
         });
 
         indextekst[2].addEventListener("click",function(){
-            var webtext = "sdfgsdfgsdfg";
+            var webtext = "Leuk vindt ik het om dingen te maken en aan de 'praat' te krijgen";
             woman_text[0].innerHTML= webtext;
         });
 </script>

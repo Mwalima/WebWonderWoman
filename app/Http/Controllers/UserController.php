@@ -17,7 +17,11 @@ class UserController
 
     public function index(Request $request)
     {
-        return view('/login');
+        return view('/register');
+    }
+
+    public function showUser(){
+        return view('register');
     }
 
     /**
@@ -26,27 +30,30 @@ class UserController
      */
     public function insertUser(Request $request)
     {
-        if ($request != null) {
-//            $users = new Users;
-//            $users->created_at = time();
-//            $users->name = $request->get('name');
-//            $users->lastname = $request->get('lastname');
-//            $users->email = $request->get('email');
-//            $users->street = $request->get('street');
-//            $users->housenumber = $request->get('housenumber');
-//            $users->password = $request->get('password');
-//            $users->picture = $request->get('picture');
-//            $users->city = $request->get('city');
-//            $users->zipcode = $request->get('zipcode');
-//            $users->country = "Nederland";
-//            $users->save();
+//        var_dump($request);
+//        die();
+//
+//        $this->validate($request, [
+//            'name' => 'required',
+//            'email' => 'required|email',
+//            'message' => 'required'
+//        ]);
 
-            return back()->with('success', 'Thanks for contacting us!');
+        $users = new Users;
+        $users->created_at = time();
+        $users->name = $request->get('name');
+        $users->lastname = $request->get('lastname');
+        $users->email = $request->get('email');
+        $users->street = $request->get('street');
+        $users->housenumber = $request->get('housenumber');
+        $users->password = $request->get('password');
+        $users->picture = $request->get('picture');
+        $users->city = $request->get('city');
+        $users->zipcode = $request->get('zipcode');
+        $users->country = "Nederland";
+        $users->save();
 
-        } else {
-
-            return back()->with('failure', 'try again');
-        }
+        return back()->with('success', 'Thanks for contacting us!');
     }
 
 

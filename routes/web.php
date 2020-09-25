@@ -14,8 +14,8 @@
 
 Route::get('/', 'PageController@getTeksten');
 
-Route::get('/login','UserController@index');
-Route::post('/login',['as'=>'users.store', 'uses'=>'UserController@insertUser']);
+Route::get('/register','UserController@showUser');
+Route::post('/register',['as'=>'users.store', 'uses'=>'UserController@insertUser']);
 
 Route::get('/invite',function(){
     return view('invitation');});
@@ -44,3 +44,4 @@ Route::get('/privacypolicy', function(){
 Route::get('/findthelooapp', function(){
     return view('partials.findtheloo');
 });
+

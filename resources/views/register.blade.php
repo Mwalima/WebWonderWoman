@@ -4,6 +4,7 @@
     @include('partials.header')
 </head>
 <body>
+
 <div class="navbar-nav navbar-inverse navbar-fixed-top">
     @include('partials.nav_menu')
 </div>

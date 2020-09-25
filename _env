@@ -1,0 +1,33 @@
+APP_NAME=webwonderwoman
+APP_ENV=local
+APP_KEY=base64:AXg/+ePkXrRzUTmaskdB8f8PcHCjY5y2AJoOyj7w5/M=
+APP_DEBUG=true
+APP_LOG_LEVEL=debug
+APP_URL=http://localhost
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=OOP
+DB_USERNAME=root
+DB_PASSWORD=m=191976
+
+CACHE_DRIVER=redis
+REDIS_HOST=127.0.0.1
+REDIS_PORT=63791
+
+#connection details mailtrap
+#MAIL_DRIVER=smtp
+#MAIL_HOST=smtp.mailtrap.io
+#MAIL_PORT=2525
+#MAIL_USERNAME=266c9133134f20
+#MAIL_PASSWORD=bf46f4dd48c519
+#MAIL_ENCRYPTION=null
+
+#connection detail gmail
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME= m.peltenburg@gmail.com
+MAIL_PASSWORD= fubrzxutwmvpbfoz
+MAIL_ENCRYPTION=tls

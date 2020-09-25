@@ -14,7 +14,7 @@
             <li><a href="/whoweare"><i class="icon-th icon-white"></i>Who we are</a></li>
             <li><a href="/whotocontact"><i class="icon-lock icon-white"></i>Who to contact</a></li>
             <li><a href="/whoareyou"><i class="icon-user icon-white"></i>Who Are You</a></li>
-            <li><a href="/login"><i class="icon-lock icon-white"></i> Login</a></li>
+            <li><a href="/register"><i class="icon-lock icon-white"></i> Login</a></li>
             {{--<li><a href="/invite"><i class="icon-user icon-white"></i> RSVP</a></li>--}}
 
         </ul>

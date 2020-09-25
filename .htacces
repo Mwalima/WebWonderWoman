@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^westeurope.cloudapp.azure.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^wonderweb.westeurope.cloudapp.azure.com$
+RewriteCond %{REQUEST_URI} !public/
+RewriteRule (.*) /public/$1 [L]
